@@ -4,9 +4,9 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 # Install postgresql 
-package 'postgresql' do
+package 'postgresql-server' do
 	action :install
-	notifies :run, 'execute[postgresql-init]'
+	notifies :run, 'execute[postgresql-init]', :immediately
 end
 
 execute 'postgresql-init' do
